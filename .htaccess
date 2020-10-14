@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule ^$ /kyaria/vistas/index.php [L]
