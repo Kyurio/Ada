@@ -4,7 +4,23 @@
 require_once("../inc/header.php");
 ?>
 
-  <h1>acceso denegado jeje</h1>
+<div id="app">
+  <div class="container-text mt-1 mb-5">
+    <div class="text-center">
+      <div class="row">
+        <div class="d-flex justify-content-center">
+          <div class="col-6 col-auto">
+            <div class="py-5 mx-5">
+
+              <h2 class="font-weight-bold mb-5"> 403 ERROR</h2>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <?php
 require_once("../inc/footer.php");
