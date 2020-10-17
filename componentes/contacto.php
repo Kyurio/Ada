@@ -1,5 +1,5 @@
 
-<div class="container mt-5">
+<div class="container mt-5 mb-5">
   <form>
     <div class="form-group">
       <label for="exampleInputEmail1">Direccion de correo</label>

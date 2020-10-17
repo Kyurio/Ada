@@ -1,2 +1,8 @@
 RewriteEngine on
 RewriteRule ^$ /kyaria/vistas/index.php [L]
+
+#Error
+ErrorDocument 404 /kyaria/error/404.php
+ErrorDocument 500 /kyaria/error/500.php
+ErrorDocument 403 /kyaria/error/403.php
+ErrorDocument 300 /kyaria/error/300.php

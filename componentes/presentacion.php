@@ -1,8 +1,7 @@
 
 <div class="container">
   <div class="jumbotron">
-    <h1 class="display-4 text-white text-presentacion text-center">Por que a mi no me compila</h1>
-    <p class="lead text-center">intento enseñar progrmacion mas no se como enseñar.</p>
-    <hr class="my-4">
+    <h1 class="display-4 text-white text-presentacion text-center"><?php echo NOMBRE_SITIO ?></h1>
+    <p class="lead text-center"><?php echo SLOGAN ?></p>
   </div>
 </div>

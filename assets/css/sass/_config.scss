@@ -11,9 +11,12 @@
   }
 
 }
+
+//presentacion
 .jumbotron{
 
   padding: 15rem 10rem;
+  background-color: transparent !important;
 
   .text-presentacion{
 
@@ -30,19 +33,37 @@
   }
 }
 
+//configuracion contenedor de textos
+.container-text{
 
-.parent {
-  -webkit-transform: skewY(-5deg);
-  -moz-transform: skewY(-5deg);
-  -ms-transform: skewY(-5deg);
-  -o-transform: skewY(-5deg);
-  transform: skewY(-5deg);
+  width: 100% !important;
+  background-color: #fff !important;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+
 }
 
-.parent > .child {
-  -webkit-transform: skewY(5deg);
-  -moz-transform: skewY(5deg);
-  -ms-transform: skewY(5deg);
-  -o-transform: skewY(5deg);
-  transform: skewY(5deg);
+// condiguracion galeria
+.flex-column {
+  max-width: 260px;
+}
+
+.scale {
+  transform: scaleY(1.05);
+  padding-top: 5px;
+}
+
+//  Footer
+.footer{
+  background-color: $colorprincipal;
+  display: block;
+  a{
+    color: #fff !important;
+  }
+  :hover{
+    text-decoration: none;
+  }
 }
