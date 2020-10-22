@@ -10,7 +10,6 @@ RewriteRule ^$ /kyaria/vistas/index.php [L]
 RewriteRule ^([a-zA-Z0-9/]+)$ /kyaria/vistas/$1.php [NC,L]
 
 
-
 #Error
 ErrorDocument 404 /kyaria/error/404.php
 ErrorDocument 500 /kyaria/error/500.php

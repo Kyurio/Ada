@@ -9,4 +9,12 @@ define('NOMBRE_SITIO', 'Kyaria');
 define('SLOGAN', 'no comeremos mañana ni hoy');
 
 
+//datos de conexion
+
+define('USER', 'root');
+define('PASSWORD', '');
+define('NAME_BD', 'AddaTest');
+define('HOST', 'localhost');
+
+
 ?>

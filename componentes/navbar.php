@@ -7,13 +7,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="index">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="<?php echo RUTA_URL?>index">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="about">Nosotros</a>
+        <a class="nav-link" href="<?php echo RUTA_URL?>about">Nosotros</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="encuentranos">encuentranos</a>
+        <a class="nav-link" href="<?php echo RUTA_URL?>encuentranos">encuentranos</a>
       </li>
     </ul>
   </div>

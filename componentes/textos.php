@@ -17,6 +17,7 @@
               </p>
 
               {{ message }}
+              <button type="button" @click="test()" name="button">TEST</button>
 
             </div>
           </div>
