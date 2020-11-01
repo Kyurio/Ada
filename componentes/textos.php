@@ -17,7 +17,18 @@
               </p>
 
               {{ message }}
-              <button type="button" @click="test()" name="button">TEST</button>
+              <button type="button" @click="test" name="button">TEST</button>
+
+
+              <form class="" action="<?php echo RUTA_URL ?>config/control/Upload.php" enctype="multipart/form-data" method="post">
+                <input type="file" name="archivo" value="">
+                <div class="progress">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-success" name="button">subir</button>
+              </form>
+
 
             </div>
           </div>

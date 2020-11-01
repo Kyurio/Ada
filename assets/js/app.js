@@ -25,7 +25,7 @@ var app = new Vue({
       axios({
 
         method: 'POST',
-        url: "/kyaria/config/query/insert_mapa.php ",
+        url: "/kyaria/config/control/Mapa.php",
         data:{
 
           map_url: this.url_map
@@ -53,6 +53,16 @@ var app = new Vue({
       });
 
       this.url_map = '';
+
+    },
+
+    test: function(){
+
+      capturador = this;
+      axios.get('/kyaria/config/control/test.php', {
+      }).then(function (response) {
+        console.log(response);
+      });
 
     },
 

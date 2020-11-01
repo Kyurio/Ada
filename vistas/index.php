@@ -1,5 +1,8 @@
 <?php
 
+//pagina principal
+
+
 //header
 require_once("../inc/header.php");
 //jumbotron
