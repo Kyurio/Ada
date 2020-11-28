@@ -15,6 +15,12 @@
       <li class="nav-item">
         <a class="nav-link" href="<?php echo RUTA_URL?>encuentranos">encuentranos</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?php echo RUTA_URL?>login">Log in</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?php echo RUTA_URL?>publicaciones">publicaciones</a>
+      </li>
     </ul>
   </div>
 </nav>

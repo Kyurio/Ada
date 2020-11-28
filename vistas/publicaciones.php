@@ -1,12 +1,13 @@
 <?php
 
-//pagina principal -- en esta pagina se importan todos los archivos necesarios para construir la one page
-
-
 //header
 require_once("../inc/header.php");
-//jumbotron
+//presentacion
+require_once("../componentes/presentacion.php");
+//publicaciones
 require_once("../componentes/posts.php");
+//encuentranos
+require_once("../componentes/contacto.php");
 //footer
 require_once("../inc/footer.php");
 

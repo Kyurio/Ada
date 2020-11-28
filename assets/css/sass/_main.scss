@@ -2,8 +2,8 @@
 $font-family: 'Cutive Mono', monospace;
 
 
-$colorprincipal: #0f3057;
-$colorSecundario: #008891;
+$colorprincipal: #2f323e;
+$colorSecundario: #f33155;
 $colorTerciario: #00587a;
 
 $backgroundcolor: #1b1919;
@@ -11,3 +11,11 @@ $colorTextoWhite: #ffff;
 
 $colorconstraste: #f39c12;
 $white: #e7e7de;
+
+
+// configuracion de botones de  bootstrpa
+.danger{
+
+  background-color: $colorSecundario !important;
+
+}
