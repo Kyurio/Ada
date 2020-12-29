@@ -9,18 +9,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="<?php echo RUTA_URL?>index">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="<?php echo RUTA_URL?>about">Nosotros</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="<?php echo RUTA_URL?>encuentranos">encuentranos</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="<?php echo RUTA_URL?>login">Log in</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="<?php echo RUTA_URL?>publicaciones">publicaciones</a>
-      </li>
+
     </ul>
   </div>
 </nav>

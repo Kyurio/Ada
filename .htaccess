@@ -4,7 +4,7 @@ RewriteEngine on
 RewriteRule ^$ /kyaria/vistas/index.php [L]
 
 #buscar el archivo ingresado en la url
-#RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-f
 
 #Urls amigables
 RewriteRule ^([a-zA-Z0-9/]+)$ /kyaria/vistas/$1.php [NC,L]
