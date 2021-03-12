@@ -1,36 +1,4 @@
-
-
-<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-  <div class="sidebar-sticky pt-3">
-    <ul class="nav flex-column" id="myTab" role="tablist">
-
-      <li class="nav-item" role="presentation">
-        <a class="nav-link active" @click="changeTitle('Home')" id="home-tab" data-bs-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><i class="fas fa-home"></i> Home</a>
-      </li>
-
-      <li class="nav-item" role="presentation">
-        <a class="nav-link" @click="changeTitle('Tareas')" id="profile-tab" data-bs-toggle="tab" href="#tareas" role="tab" aria-controls="tareas" aria-selected="false"><i class="fas fa-thumbtack"></i> Tareas</a>
-      </li>
-
-      <li class="nav-item" role="presentation">
-        <a class="nav-link" @click="changeTitle('Cronograam')" id="contact-tab" data-bs-toggle="tab" href="#cronograma" role="tab" aria-controls="cronograma" aria-selected="false"><i class="fas fa-poll"></i> Cronograma</a>
-      </li>
-
-
-      <li class="nav-item" role="presentation">
-        <a class="nav-link" @click="changeTitle('Objetivos')" id="contact-tab" data-bs-toggle="tab" href="#objetivos" role="tab" aria-controls="objetivos" aria-selected="false"><i class="fas fa-bullseye"></i> Objetivos</a>
-      </li>
-
-
-      <li class="nav-item" role="presentation">
-        <a class="nav-link" @click="changeTitle('Configuracion')" id="contact-tab" data-bs-toggle="tab" href="#config" role="tab" aria-controls="config" aria-selected="false"><i class="fas fa-cog"></i> configuracion</a>
-      </li>
-
-
-      <li class="nav-item" role="presentation">
-        <a class="nav-link" @click="changeTitle('perfil')" id="contact-tab" data-bs-toggle="tab" href="#perfil" role="tab" aria-controls="perfil" aria-selected="false"><i class="fas fa-male"></i> perfil</a>
-      </li>
-
-    </ul>
-  </div>
-</nav>
+<div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+  <button class="nav-link active" id="v-pills-task-tab" data-bs-toggle="pill" data-bs-target="#v-pills-task" type="button" role="tab" aria-controls="v-pills-task" aria-selected="true">Home</button>
+  <button class="nav-link" id="v-pills-user-tab" data-bs-toggle="pill" data-bs-target="#v-pills-user" type="button" role="tab" aria-controls="v-pills-user" aria-selected="false">Profile</buttona>
+</div>

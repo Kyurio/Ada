@@ -1,17 +1,17 @@
 RewriteEngine on
 
 #Redirecciona al index
-RewriteRule ^$ /kyaria/vistas/index.php [L]
+RewriteRule ^$ /Ada/views/index.php [L]
 
 #buscar el archivo ingresado en la url
 RewriteCond %{REQUEST_FILENAME} !-f
 
 #Urls amigables
-RewriteRule ^([a-zA-Z0-9/]+)$ /kyaria/vistas/$1.php [NC,L]
+RewriteRule ^([a-zA-Z0-9/]+)$ /Ada/views/$1.php [NC,L]
 
 
 #Error
-ErrorDocument 404 /kyaria/error/404.php
-ErrorDocument 500 /kyaria/error/500.php
-ErrorDocument 403 /kyaria/error/403.php
-ErrorDocument 300 /kyaria/error/300.php
+ErrorDocument 404 /Ada/error/404.php
+ErrorDocument 500 /Ada/error/500.php
+ErrorDocument 403 /Ada/error/403.php
+ErrorDocument 300 /Ada/error/300.php
