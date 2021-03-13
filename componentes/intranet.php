@@ -1,9 +1,7 @@
-<div class="d-flex align-items-start">
 
-  <?php require_once("../componentes/sidebar.php"); ?>
+<div id="app">
 
-  <div class="tab-content" id="v-pills-tabContent">
-    <div class="tab-pane fade show active" id="v-pills-task" role="tabpanel" aria-labelledby="v-pills-task-tab">
+      {{  test }}
 
       <h3>Tareas</h3>
 
@@ -24,11 +22,32 @@
         </tbody>
       </table>
 
-    </div>
-    <div class="tab-pane fade" id="v-pills-user" role="tabpanel" aria-labelledby="v-pills-user-tab">
+  
+      <!-- formulario insert tarea -->
+      <div class="col-6">
+        <div class="card">
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Tarea</label>
+                <input type="email" class="form-control" placeholder="Titulo de Tarea" v-model="tarea">
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Usuario</label>
+                <input type="email" class="form-control" placeholder="Usuario a realizar la tarea" v-model="usuario">
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Descripcion</label>
+                <textarea class="form-control" rows="3" v-model="descripcion"></textarea>
+              </div>
 
-      <h3>Usuarios</h3>
+              <button type="button" name="button" v-on:click="GrabarTarea" class="btn btn-sm btn-success mt-1 mb-1">Grabar</button>
 
-    </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- end formulario -->
+
 
   </div>

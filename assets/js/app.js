@@ -1,97 +1,56 @@
-
 var app = new Vue({
 
   el: '#app',
   data: {
 
+    test: 'el nene',
 
-    titulo: 'titulo default',
-    Nombre_web: 'Nombre Web',
+    tarea: '',
+    usuario: '',
+    descripcion: '',
 
-    //valores dolars
 
-    ValorDolars: '',
-    FechaCompra: '',
-    CantidadDolars: '',
-    errors: ̣{},
-
-  },
-
-  mounted: {
+    ListadoTareas: {},
 
 
   },
 
-  computed: {
-
+  mounted: function(){
 
 
   },
 
   methods: {
 
-    // carga el titulo de la web
-    changeTitle: function(title){
-
-      capturador = this;
-      capturador.titulo = title;
-
-    },
-
-    GrabarDolars: function (){
+    GrabarTarea: function () {
 
       axios({
         method: 'POST',
-        url: '/framework_php/',
+        url: 'http://localhost/Ada/config/control/Task.php',
         data: {
-          name: this.name_category,
-          description: this.description_category,
+
+          strtarea: this.tarea,
+          intusuario: this.usuario,
+          strdescripcion: this.descripcion,
+          intestado: 0,
         }
 
       }).then(function (response) {
         // handle success
         if(response.data == true){
-          swal("Exito al grabar!","se ha guardado un nuevo registro", "success");
+          var notification = alertify.notify('sample', 'success', 5, function(){  console.log('dismissed'); });
         }else{
-          swal("Error al grabar!","por favor intentelo mas tarde", "warning");
+          var notification = alertify.notify('sample', 'success', 5, function(){  console.log('dismissed'); });
         }
-        //console.log(response.data);
-      }).catch(function (error) {
-        console.log(error);
+        console.log(response.data);
+      }).catch(function (response) {
+        console.log("error interno"+response);
       });
 
 
       //refresca la tabla
 
     },
-
-    Empresa: function() {
-
-      axios({
-        method: 'POST',
-        url: '/framework_php/',
-        data: {
-          name: this.name_category,
-          description: this.description_category,
-        }
-
-      }).then(function (response) {
-        // handle success
-        if(response.data == true){
-          swal("Exito al grabar!","se ha guardado un nuevo registro", "success");
-        }else{
-          swal("Error al grabar!","por favor intentelo mas tarde", "warning");
-        }
-        //console.log(response.data);
-      }).catch(function (error) {
-        console.log(error);
-      });
-
-
-    },
-
-
-
 
   }
 
