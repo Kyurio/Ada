@@ -9,6 +9,9 @@ var app = new Vue({
     usuario: '',
     descripcion: '',
 
+    num_results: 10,
+    pag: 1,
+
 
     ListadoTareas: {},
 
@@ -17,6 +20,7 @@ var app = new Vue({
 
   mounted: function(){
 
+    this.listar_area();
 
   },
 
@@ -50,6 +54,14 @@ var app = new Vue({
 
       //refresca la tabla
 
+    },
+
+    ListadoTarea: function () {
+      capturador = this;
+      axios.get('/Ada/config/control/ListadoTask.php', {
+      }).then(function (response) {
+        capturador.categorys = response.data;
+      });
     },
 
   }

@@ -64,7 +64,7 @@ class Task extends Conexion{
   public function listar_tareas(){
 
     try {
-      $sql  =  ("SELECT * FROM task WHERE estado = 1");
+      $sql  =  ("SELECT * FROM tarea WHERE estado = 1");
       $stmt =  $this->conexion->query($sql);
       $row  =  $stmt->fetchAll();
       if ($row ) {

@@ -1,53 +1,98 @@
 
 <div id="app">
 
-      {{  test }}
 
-      <h3>Tareas</h3>
+  <div class="container">
 
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">Tarea</th>
-            <th scope="col">Usuario</th>
-            <th scope="col">Estado</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-        </tbody>
-      </table>
+    <!-- form -->
+    <div class="card">
+      <div class="card-content">
+        <div class="content">
 
-  
-      <!-- formulario insert tarea -->
-      <div class="col-6">
-        <div class="card">
-          <div class="card-body">
-            <form>
-              <div class="form-group">
-                <label for="exampleFormControlInput1">Tarea</label>
-                <input type="email" class="form-control" placeholder="Titulo de Tarea" v-model="tarea">
-              </div>
-              <div class="form-group">
-                <label for="exampleFormControlInput1">Usuario</label>
-                <input type="email" class="form-control" placeholder="Usuario a realizar la tarea" v-model="usuario">
-              </div>
-              <div class="form-group">
-                <label for="exampleFormControlTextarea1">Descripcion</label>
-                <textarea class="form-control" rows="3" v-model="descripcion"></textarea>
-              </div>
-
-              <button type="button" name="button" v-on:click="GrabarTarea" class="btn btn-sm btn-success mt-1 mb-1">Grabar</button>
-
-            </form>
+          <div class="field">
+            <label class="label">Tarea</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="titulo tarea">
+            </div>
           </div>
+
+          <div class="field">
+            <label class="label">Descripcion</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="descripcion">
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="label">Usuario</label>
+            <div class="control">
+              <input class="input" type="text" placeholder="usuario que realiza la tarea">
+            </div>
+          </div>
+
+
+          <div class="field is-grouped">
+            <div class="control">
+              <button class="button is-primary is-samll">Submit</button>
+            </div>
+          </div>
+
+
         </div>
       </div>
-      <!-- end formulario -->
+    </div>
+    <!-- end form -->
+
+    <br>
+
+    <!-- table -->
+    <div class="card">
+      <div class="card-content">
+
+        <div class="content">
+
+          <table class="table">
+            <thead>
+              <tr>
+
+                <th>Tarea</th>
+                <th>Descripcion</th>
+                <th>Usuario</th>
+                <th>Accion</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(item, index) in filterProducts" v-show="(pag - 1) * num_results <= index  && pag * num_results > index">
+                <th>1</th>
+                <th>1</th>
+                <th>1</th>
+                <th>
+                  <button class="button is-small is-danger ">
+                    <span>Delete</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-times"></i>
+                    </span>
+                  </button>
+
+                  <button class="button is-small is-warning ">
+                    <span>Edit</span>
+                    <span class="icon is-small">
+                      <i class="fas fa-pen"></i>
+                    </span>
+                  </button>
+                </th>
+              </tr>
+            </tbody>
+          </table>
 
 
+        </div>
+
+      </div>
+    </div>
+    <!-- end table -->
   </div>
+
+
+</div>
