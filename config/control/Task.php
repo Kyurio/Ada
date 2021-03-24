@@ -5,7 +5,7 @@ require_once("../../config/core/Autoload.php");
 require_once("../../extends/redirect.php");
 
 
-// if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   $objTask = new Task();
 
@@ -15,9 +15,9 @@ require_once("../../extends/redirect.php");
 
   // estado 0 pendiente, 1 pausadom, 2 terminado.
 
-  $tarea =  $data['strtarea'];
-  $descripcion =  $data['strdescripcion'];
-  $usuario = $data['intusuario'];
+  $tarea =  $data['str_tarea'];
+  $descripcion =  $data['str_descripcion'];
+  $usuario = $data['int_usuario'];
   $estado = 0;
 
   // key de seguridad
@@ -41,8 +41,8 @@ require_once("../../extends/redirect.php");
     echo json_encode(false);
   }
 
-// }else{
-//
-//   Err(500);
-//
-// }
+}else{
+
+  Err(500);
+
+}

@@ -6,34 +6,40 @@
 
     <!-- form -->
     <div class="card">
+
+
+
       <div class="card-content">
+
+              <h5 class="title is-5">Tareas</h5>
+
         <div class="content">
+
 
           <div class="field">
             <label class="label">Tarea</label>
             <div class="control">
-              <input class="input" type="text" placeholder="titulo tarea">
+              <input class="input" type="text" placeholder="titulo tarea" v-model="tarea">
             </div>
           </div>
 
           <div class="field">
             <label class="label">Descripcion</label>
             <div class="control">
-              <input class="input" type="text" placeholder="descripcion">
+              <input class="input" type="text" placeholder="descripcion" v-model="descripcion">
             </div>
           </div>
 
           <div class="field">
             <label class="label">Usuario</label>
             <div class="control">
-              <input class="input" type="text" placeholder="usuario que realiza la tarea">
+              <input class="input" type="text" placeholder="usuario que realiza la tarea" v-model="usuario">
             </div>
           </div>
 
-
           <div class="field is-grouped">
             <div class="control">
-              <button class="button is-primary is-samll">Submit</button>
+              <button class="button is-primary is-small" @click="GrabarTarea">Grabar</button>
             </div>
           </div>
 
@@ -57,16 +63,16 @@
 
                 <th>Tarea</th>
                 <th>Descripcion</th>
-                <th>Usuario</th>
+                <th>Estadi</th>
                 <th>Accion</th>
 
               </tr>
             </thead>
             <tbody>
-              <tr v-for="(item, index) in filterProducts" v-show="(pag - 1) * num_results <= index  && pag * num_results > index">
-                <th>1</th>
-                <th>1</th>
-                <th>1</th>
+              <tr v-for="(item, index) in ListadoTareas" v-show="(pag - 1) * num_results <= index  && pag * num_results > index" >
+                <th>{{ item.tarea }}</th>
+                <th>{{ item.descripcion }}</th>
+                <th>{{ item.estado }}</th>
                 <th>
                   <button class="button is-small is-danger ">
                     <span>Delete</span>
@@ -86,6 +92,12 @@
             </tbody>
           </table>
 
+          <!-- paginador -->
+          <nav class="pagination" role="navigation" aria-label="pagination">
+            <a class="pagination-previous" v-show="pag != 1" @click.prevent="pag -= 1">Anteriror</a>
+            <a class="pagination-next" v-show="pag * num_results / ListadoTareas.length < 1" @click.prevent="pag += 1">Siguiente</a>
+          </nav>
+          <!-- end paginadaro -->
 
         </div>
 

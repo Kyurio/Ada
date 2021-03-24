@@ -2,8 +2,8 @@
 
 //header
 require_once("../inc/header.php");
-//jumbotron
-require_once("../componentes/login.php");
+//nosotros
+require_once("../componentes/usuario.php");
 //footer
 require_once("../inc/footer.php");
 

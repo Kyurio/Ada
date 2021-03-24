@@ -9,7 +9,7 @@ var app = new Vue({
     usuario: '',
     descripcion: '',
 
-    num_results: 10,
+    num_results: 5,
     pag: 1,
 
 
@@ -20,47 +20,52 @@ var app = new Vue({
 
   mounted: function(){
 
-    this.listar_area();
+    this.ListadoTasks();
 
   },
 
   methods: {
 
     GrabarTarea: function () {
-
       axios({
         method: 'POST',
-        url: 'http://localhost/Ada/config/control/Task.php',
+        url: '/Ada/config/control/Task.php',
         data: {
 
-          strtarea: this.tarea,
-          intusuario: this.usuario,
-          strdescripcion: this.descripcion,
+          str_tarea: this.tarea,
+          int_usuario: this.usuario,
+          str_descripcion: this.descripcion,
           intestado: 0,
         }
 
       }).then(function (response) {
         // handle success
-        if(response.data == true){
-          var notification = alertify.notify('sample', 'success', 5, function(){  console.log('dismissed'); });
-        }else{
-          var notification = alertify.notify('sample', 'success', 5, function(){  console.log('dismissed'); });
-        }
         console.log(response.data);
+        if(response.data == true){
+          swal("Good job!", "You clicked the button!", "success");
+        }else{
+          swal("error", "Something went wrong!" ,  "error" )
+        }
+
+
+
       }).catch(function (response) {
         console.log("error interno"+response);
       });
 
+      this.tarea = '';
+      this.usuario = '';
+      this.descripcion = '';
 
       //refresca la tabla
-
+      this.ListadoTask();
     },
 
-    ListadoTarea: function () {
+    ListadoTasks: function () {
       capturador = this;
       axios.get('/Ada/config/control/ListadoTask.php', {
       }).then(function (response) {
-        capturador.categorys = response.data;
+        capturador.ListadoTareas = response.data;
       });
     },
 
