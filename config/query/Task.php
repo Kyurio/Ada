@@ -10,6 +10,7 @@ class Task extends Conexion{
   private $strDescripcion;
   private $intUsuario;
   private $intEstado;
+  private $idTarea;
 
   function __construct(){
 
@@ -79,19 +80,22 @@ class Task extends Conexion{
   }
 
   // update
-  public function update_tarea(int $id){
+  public function update_tarea(string $key, string $tarea, string $descripcion, int $usuario, int $estado, int $id){
 
     try{
 
-      $this->intEstado = 0;
-      $this->id = $id;
+      $this->intUsuario= $usuario;
+      $this->strTarea = $tarea;
+      $this->strDescripcion = $descripcion;
+      $this->intEstado = $estado;
+      $this->idTarea = $id;
       // 1 activo - 0 inactivo;
 
-      $sql = "UPDATE task SET estado = ? WHERE id = ?";
+      $sql = "UPDATE task SET tarea = ?, descripcion = ?, usuario = ?, estado = ? WHERE id_tarea = ?";
       $update = $this->conexion->prepare($sql);
-      $arrData = array($this->intEstado, $this->id);
+      $arrData = array($this->strTarea, $this->strDescripcion, $this->intUsuario, $this->intEstado, $this->$idTarea);
       $resInsert = $update->execute($arrData);
-
+      echo $sql;
       if($resInsert){
 
         return true;
@@ -108,9 +112,10 @@ class Task extends Conexion{
 
   }
 
-  // delete
-  public function delete_mapa(){}
+  // acutaliza estado tarea
 
+  // delete
+  public function delete_tarea(){}
 
 
   }

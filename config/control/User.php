@@ -8,12 +8,20 @@ require_once("../../extends/redirect.php");
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-  $objAreas = new Area();
-  $key = base64_encode("123");
+  $objUsers = new Usuario();
 
-  if($select  = $objAreas->listar_area()){
+  // request post
+  $data = json_decode(file_get_contents("php://input"), true);
+
+  // key de seguridad
+  $key = base64_encode("elnene");
+  $nombre = $data['str_usuario'];
+  $password = $data['str_password'];
+  $correo  = $data['str_correo'];
+
+  if($insert  = $objUsers->insert_usuario($key, $nombre, $password, $correo)){
     // redireccionar
-    echo json_encode($select);
+    echo json_encode($insert);
 
   }else{
     // error al direccionar

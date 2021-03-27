@@ -5,9 +5,10 @@ require_once("../../config/core/Autoload.php");
 class Usuario extends Conexion{
 
   private $strKey;
-  private $strUsusario;
-  private $strSeccion;
-  private $intPass;
+  private $strNombre_Usuario;
+  private $strPassword;
+  private $intCorreo;
+  private $intEstado;
 
   function __construct(){
 
@@ -17,47 +18,50 @@ class Usuario extends Conexion{
   }
 
   // insert
-  public function insert_tarea(string $key, string $usuario, string $seccion, string $pass){
+  public function insert_usuario(string $key, string $nombre_usuario, string $password, string $correo){
 
     try {
+      // validador key
+      if(base64_decode($key) == 'elnene'){
 
-      $this->strUsuario= $usuario;
-      $this->strPlazo = $plazo;
-      $this->intEstado = 1;
-      $this->intIdUsuario =1;
-      $this->strKey = base64_decode
+        $this->strNombre_Usuario = $nombre_usuario;
+        $this->strPassword = $password;
+        $this->strCorreo = $correo;
+        $this->intEstado = 1;
 
-      // 1 activo - 0 inactivo;
+        // 1 activo - 0 inactivo;
 
-      $sql = "INSERT INTO task(titulo, plazo, Estado, id_usuario) VALUES (?,?,?,?)";
-      $insert = $this->conexion->prepare($sql);
-      $arrData = array($this->strTitulo, $this->strPlazo, $this->intEstado, $this->intIdUsuario);
-      $resInsert = $insert->execute($arrData);
+        $sql = "INSERT INTO usuario(nombre_usuario, contraseña, correo, estado) VALUES (?,?,?,?)";
+        $insert = $this->conexion->prepare($sql);
+        $arrData = array($this->strNombre_Usuario, $this->strPassword, $this->strCorreo, $this->intEstado);
+        $resInsert = $insert->execute($arrData);
 
-      if($resInsert){
+        if($resInsert){
 
-        return true;
+          return true;
+
+        }else{
+
+          return false;
+
+        }
 
       }else{
 
-        return false;
+        return 500;
 
       }
 
     } catch (\Exception $e) {
-
       echo "errro";
-
     }
-
-
   }
 
   // select
-  public function listar_tareas(){
+  public function listar_usuario(){
 
     try {
-      $sql  =  ("SELECT * FROM task WHERE estado = 1");
+      $sql  =  ("SELECT * FROM usuario WHERE estado = 1");
       $stmt =  $this->conexion->query($sql);
       $row  =  $stmt->fetchAll();
       if ($row ) {
@@ -104,4 +108,5 @@ class Usuario extends Conexion{
   // delete
   public function delete_mapa(){}
 
-  }
+
+}

@@ -7,42 +7,14 @@
     <!-- form -->
     <div class="card">
 
-
-
       <div class="card-content">
-
-              <h5 class="title is-5">Tareas</h5>
-
+        <h5 class="title is-5">Tareas</h5>
         <div class="content">
 
 
-          <div class="field">
-            <label class="label">Tarea</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="titulo tarea" v-model="tarea">
-            </div>
-          </div>
-
-          <div class="field">
-            <label class="label">Descripcion</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="descripcion" v-model="descripcion">
-            </div>
-          </div>
-
-          <div class="field">
-            <label class="label">Usuario</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="usuario que realiza la tarea" v-model="usuario">
-            </div>
-          </div>
-
-          <div class="field is-grouped">
-            <div class="control">
-              <button class="button is-primary is-small" @click="GrabarTarea">Grabar</button>
-            </div>
-          </div>
-
+          <!-- form -->
+          <?php require_once("../componentes/subcomponentes/formTask.php"); ?>
+          <!-- end form -->
 
         </div>
       </div>
@@ -54,44 +26,18 @@
     <!-- table -->
     <div class="card">
       <div class="card-content">
-
         <div class="content">
 
-          <table class="table">
-            <thead>
-              <tr>
+          <div class="columns is-centered is-vcentered is-mobile">
+            <div class="column is-12 is-narrow has-text-centered">
 
-                <th>Tarea</th>
-                <th>Descripcion</th>
-                <th>Estadi</th>
-                <th>Accion</th>
+              <!-- form -->
+              <?php require_once("../componentes/subcomponentes/tableTask.php"); ?>
+              <!-- end form -->
 
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="(item, index) in ListadoTareas" v-show="(pag - 1) * num_results <= index  && pag * num_results > index" >
-                <th>{{ item.tarea }}</th>
-                <th>{{ item.descripcion }}</th>
-                <th>{{ item.estado }}</th>
-                <th>
-                  <button class="button is-small is-danger ">
-                    <span>Delete</span>
-                    <span class="icon is-small">
-                      <i class="fas fa-times"></i>
-                    </span>
-                  </button>
-
-                  <button class="button is-small is-warning ">
-                    <span>Edit</span>
-                    <span class="icon is-small">
-                      <i class="fas fa-pen"></i>
-                    </span>
-                  </button>
-                </th>
-              </tr>
-            </tbody>
-          </table>
-
+            </div>
+          </div>
+          
           <!-- paginador -->
           <nav class="pagination" role="navigation" aria-label="pagination">
             <a class="pagination-previous" v-show="pag != 1" @click.prevent="pag -= 1">Anteriror</a>
@@ -100,7 +46,6 @@
           <!-- end paginadaro -->
 
         </div>
-
       </div>
     </div>
     <!-- end table -->
