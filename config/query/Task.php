@@ -70,8 +70,6 @@ class Task extends Conexion{
       $row  =  $stmt->fetchAll();
       if ($row ) {
         return $row;
-      }else {
-        return "error";
       }
     }catch(PDOException $e) {
       echo "Error: " . $e->getMessage();
@@ -91,23 +89,23 @@ class Task extends Conexion{
       $this->idTarea = $id;
       // 1 activo - 0 inactivo;
 
-      $sql = "UPDATE task SET tarea = ?, descripcion = ?, usuario = ?, estado = ? WHERE id_tarea = ?";
+      $sql = "UPDATE tarea SET tarea = ?, descripcion = ?, usuario = ?, estado = ? WHERE id_tarea = ?";
       $update = $this->conexion->prepare($sql);
-      $arrData = array($this->strTarea, $this->strDescripcion, $this->intUsuario, $this->intEstado, $this->$idTarea);
+      $arrData = array($this->strTarea, $this->strDescripcion, $this->intUsuario, $this->intEstado, $this->idTarea);
       $resInsert = $update->execute($arrData);
-      echo $sql;
+
       if($resInsert){
 
-        return true;
+        return json_encode(true);
 
       }else{
 
-        return false;
+        return json_encode(false);
 
       }
 
     } catch (\Exception $e) {
-      echo "errro 500";
+      echo "error 500 " . $e;
     }
 
   }
@@ -115,7 +113,41 @@ class Task extends Conexion{
   // acutaliza estado tarea
 
   // delete
-  public function delete_tarea(){}
+  public function delete_tarea(string $key, int $id){
+
+    try {
+      // validador key
+      if(base64_decode($key) == 'elnene'){
+
+        $this->idTarea = $id;
 
 
+        $sql = "DELETE FROM tarea WHERE id_tarea = ?";
+        $insert = $this->conexion->prepare($sql);
+        $arrData = array($this->idTarea);
+        $resDeslete = $insert->execute($arrData);
+
+        if($resDeslete){
+
+          return json_encode(true);
+
+        }else{
+
+          return json_encode(false);
+
+        }
+
+
+      }else{
+        echo json_encode(403);
+      } // end validador key
+
+    } catch (\Exception $e) {
+
+      echo json_encode(500);
+
+    }
   }
+
+
+}

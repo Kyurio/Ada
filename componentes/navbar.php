@@ -27,6 +27,11 @@
         Perfil
       </a>
 
+      <a class="navbar-item" href="<?php echo RUTA_URL?>Configuracion">
+        Configuracion
+      </a>
+
+
 
     </div>
   </nav>

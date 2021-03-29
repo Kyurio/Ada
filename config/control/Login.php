@@ -1,37 +1,33 @@
 <?php
 
-require_once("../../config/query/Task.php");
+require_once("../../config/query/Login.php");
 require_once("../../config/core/Autoload.php");
 require_once("../../extends/redirect.php");
 
 
  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-  $objTask = new Task();
+  $objLogin= new Login();
 
   // request post
   $data = json_decode(file_get_contents("php://input"), true);
 
-
-  // estado 0 pendiente, 1 pausadom, 2 terminado.
-  $id_tarea = $data['id_tarea'];
-  $tarea =  $data['str_tarea'];
-  $descripcion =  $data['str_descripcion'];
-  $usuario = $data['int_usuario'];
-  $estado = 0;
+  $usuario =  $data['str_usuario'];
+  $password =  $data['str_password'];
 
   // key de seguridad
   $key = base64_encode("elnene");
 
-  if($update  = $objTask->update_tarea($key, $tarea, $descripcion, $usuario,  $estado, $id_tarea)){
+
+  if($insert  = $objLogin->login($key, $usuario, $password)){
     // redireccionar
-    if ($update == 403) {
+    if ($insert == 403) {
 
       Err(403);
 
     }else{
 
-      echo json_encode($update);
+      echo json_encode($insert);
 
     }
 

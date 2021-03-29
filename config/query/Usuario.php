@@ -61,16 +61,16 @@ class Usuario extends Conexion{
   public function listar_usuario(){
 
     try {
+
       $sql  =  ("SELECT * FROM usuario WHERE estado = 1");
       $stmt =  $this->conexion->query($sql);
       $row  =  $stmt->fetchAll();
       if ($row ) {
         return $row;
-      }else {
-        return "error";
       }
+
     }catch(PDOException $e) {
-      echo "Error: " . $e->getMessage();
+      echo "Error: " . $e;
     }
 
   }

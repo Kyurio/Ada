@@ -8,7 +8,8 @@
     </tr>
   </thead>
   <tbody>
-    <tr v-for="(item, index) in ListadoTareas" v-show="(pag - 1) * num_results <= index  && pag * num_results > index" >
+    <tr v-for="(item, index) in ListadoTareas" v-show="(pag - 1) * num_results_perfil <= index  && pag * num_results_perfil > index" >
+
       <th>{{ item.tarea }}</th>
       <th>{{ item.descripcion }}</th>
       <th>{{ item.estado }}</th>

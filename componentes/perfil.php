@@ -16,10 +16,8 @@
           </div>
 
           <!-- paginador -->
-          <nav class="pagination" role="navigation" aria-label="pagination">
-            <a class="pagination-previous" v-show="pag != 1" @click.prevent="pag -= 1">Anteriror</a>
-            <a class="pagination-next" v-show="pag * num_results / ListadoTareas.length < 1" @click.prevent="pag += 1">Siguiente</a>
-          </nav>
+            <a class="button is-small is-black" v-show="pag != 1" @click.prevent="pag -= 1">Anteriror</a>
+            <a class="button is-small is-black" v-show="pag * num_results / ListadoTareas.length < 1" @click.prevent="pag += 1">Siguiente</a>
           <!-- end paginadaro -->
 
         </div>

@@ -1,7 +1,7 @@
 RewriteEngine on
 
 #Redirecciona al index
-RewriteRule ^$ /Ada/views/index.php [L]
+RewriteRule ^$ /Ada/views/login.php [L]
 
 #buscar el archivo ingresado en la url
 RewriteCond %{REQUEST_FILENAME} !-f
