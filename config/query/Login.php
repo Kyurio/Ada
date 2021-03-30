@@ -29,14 +29,14 @@ class Login extends Conexion{
 
         // 1 activo - 0 inactivo;
 
-        $sql = "SELECT nombre_usuario, contraseña FROM usuario WHERE nombre_usuario = ? AND contraseña = ? ";
+        $sql = "SELECT nombre_usuario, password FROM usuario WHERE nombre_usuario = ? AND password = ? ";
         $select = $this->conexion->prepare($sql);
         $arrData = array($this->str_usuario, $this->str_password);
         $resLogin = $select->execute($arrData);
 
         if($resLogin){
 
-          return json_encode($sql);
+          return json_encode(true);
 
         }else{
 

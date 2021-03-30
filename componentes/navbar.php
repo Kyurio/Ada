@@ -15,19 +15,19 @@
   <div id="navbarBasicExample" class="navbar-menu">
     <div class="navbar-start">
 
-      <a class="navbar-item" href="<?php echo RUTA_URL?>Tareas">
+      <a class="navbar-item" href="<?php echo RUTA_URL?>tareas">
         Tareas
       </a>
 
-      <a class="navbar-item" href="<?php echo RUTA_URL?>Usuario">
+      <a class="navbar-item" href="<?php echo RUTA_URL?>usuario">
         Usuarios
       </a>
 
-      <a class="navbar-item" href="<?php echo RUTA_URL?>Perfil">
+      <a class="navbar-item" href="<?php echo RUTA_URL?>perfil">
         Perfil
       </a>
 
-      <a class="navbar-item" href="<?php echo RUTA_URL?>Configuracion">
+      <a class="navbar-item" href="<?php echo RUTA_URL?>configuracion">
         Configuracion
       </a>
 

@@ -34,11 +34,10 @@ var login = new Vue({
       }).then(function (response) {
         // handle success
         console.log(response.data);
-        if(response.data == true){
+        if(response.data == "true"){
 
           //redirecciona
-
-          alert("redireccion");
+          location.href="http://localhost/Ada/perfil";
 
         }else{
           swal("error", "Something went wrong!" ,  "error" )
