@@ -5,7 +5,9 @@ require_once("../../config/core/Autoload.php");
 require_once("../../extends/redirect.php");
 
 
- if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  // Sanitize POST
+  $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
   $objTask = new Task();
 

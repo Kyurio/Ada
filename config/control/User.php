@@ -7,6 +7,8 @@ require_once("../../extends/redirect.php");
 // echo $_SERVER['PHP_SELF'];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  // Sanitize POST
+  $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
   $objUsers = new Usuario();
 

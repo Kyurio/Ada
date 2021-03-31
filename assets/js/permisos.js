@@ -37,7 +37,7 @@ var login = new Vue({
         if(response.data == "true"){
 
           //redirecciona
-          location.href="http://localhost/Ada/perfil";
+          //location.href="http://localhost/Ada/perfil";
 
         }else{
           swal("error", "Something went wrong!" ,  "error" )

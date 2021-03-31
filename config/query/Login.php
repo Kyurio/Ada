@@ -24,26 +24,24 @@ class Login extends Conexion{
       // validador key
       if(base64_decode($key) == 'elnene'){
 
-        $this->str_usuario= $usuario;
+        $this->str_usuario = $usuario;
         $this->str_password = $password;
 
-        // 1 activo - 0 inactivo;
-
-        $sql = "SELECT nombre_usuario, password FROM usuario WHERE nombre_usuario = ? AND password = ? ";
-        $select = $this->conexion->prepare($sql);
-        $arrData = array($this->str_usuario, $this->str_password);
-        $resLogin = $select->execute($arrData);
-
-        if($resLogin){
-
-          return json_encode(true);
-
+        // query
+        $sql  =  ("SELECT * FROM usuario");
+        $stmt =  $this->conexion->query($sql);
+        $row  =  $stmt->fetchAll();
+        if ($row) {
+          foreach($row as $key) {
+            if ($this->str_usuario  === $key['nombre_usuario'] && $this->str_password === $key['password']) {
+              echo json_encode(true);
+            }else{
+              echo json_encode(false);
+            }
+          }
         }else{
-
-          return json_encode(false);
-
+          echo json_encode(false);
         }
-
 
       }else{
         echo json_encode(403);
@@ -51,7 +49,7 @@ class Login extends Conexion{
 
     } catch (\Exception $e) {
 
-      echo json_encode(500);
+      echo json_encode("500" . $e);
 
     }
 
